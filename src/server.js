@@ -15,6 +15,8 @@ const Mensajes = require(__dirname + '/model/mensajes.js')
 const productos = new Productos()
 const mensajes = new Mensajes()
 
+const { routerProductos } = require(__dirname + '/routers/routerProductos.js')
+
 
 /**** Inicio App ****/
 const app = express()
@@ -61,6 +63,8 @@ app.use(express.urlencoded({extended: true}))
 app.get('/', (req, res) => {
     res.render('main')
 })
+
+app.use('/api/productos', routerProductos)
 
 // Middleware Errores
 app.use((err, req, res, next) => {
