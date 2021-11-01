@@ -8,13 +8,13 @@ const handlebars = require('express-handlebars')
 /**** CONSTANTES ****/
 const PORT = process.env.PORT || 8080
 const ERROR_CODE = 500
-const ARCHIVO_PRODUCTOS = __dirname + '/DB/productos.txt'
-const ARCHIVO_MENSAJES = __dirname + '/DB/mensajes.txt'
 
 /*** TMP ****/
-const Contenedor = require('./lib/contenedor.js')
-const productos = new Contenedor(ARCHIVO_PRODUCTOS)
-const mensajes = new Contenedor(ARCHIVO_MENSAJES)
+const Productos = require(__dirname + '/model/productos.js')
+const Mensajes = require(__dirname + '/model/mensajes.js')
+const productos = new Productos()
+const mensajes = new Mensajes()
+
 
 /**** Inicio App ****/
 const app = express()
