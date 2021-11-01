@@ -8,11 +8,11 @@ const handlebars = require('express-handlebars')
 /**** CONSTANTES ****/
 const PORT = process.env.PORT || 8080
 const ERROR_CODE = 500
-const ARCHIVO_PRODUCTOS = 'resources/productos.txt'
-const ARCHIVO_MENSAJES = 'resources/mensajes.txt'
+const ARCHIVO_PRODUCTOS = __dirname + '/DB/productos.txt'
+const ARCHIVO_MENSAJES = __dirname + '/DB/mensajes.txt'
 
 /*** TMP ****/
-const Contenedor = require('./contenedor.js')
+const Contenedor = require('./lib/contenedor.js')
 const productos = new Contenedor(ARCHIVO_PRODUCTOS)
 const mensajes = new Contenedor(ARCHIVO_MENSAJES)
 
@@ -49,12 +49,12 @@ app.engine('hbs',
     })
 )
 app.set('view engine', 'hbs')
-app.set('views', './views')
+app.set('views', __dirname + '/views')
 
 
 // Middleware incio
 app.use(express.json())
-app.use('/', express.static('public'))
+app.use('/', express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: true}))
 
 // Routers
