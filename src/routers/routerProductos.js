@@ -80,6 +80,16 @@ routerProductos.put('/:id', async (req, res, next) => {
     }
 })
 
+
+routerProductos.delete('/', async (req, res, next) => {  
+    try {
+        await productos.deleteAll()
+        res.json({})
+    } catch (error) {
+        next(error)
+    }
+})
+
 routerProductos.delete('/:id', async (req, res, next) => {  
     try {
         const id = getRequestID(req)

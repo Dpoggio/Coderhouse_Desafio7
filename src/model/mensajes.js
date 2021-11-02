@@ -1,11 +1,9 @@
-const Contenedor = require('../lib/contenedor.js')
-
-const ARCHIVO_MENSAJES = './DB/mensajes.txt'
-
+const Contenedor = require('../lib/contenedorDB.js')
+const conn = require('../lib/connections.js')
 
 class Mensajes extends Contenedor{
     constructor(){
-        super(ARCHIVO_MENSAJES)
+        super(conn.sqlite,'mensajes')
     }
 }
 
