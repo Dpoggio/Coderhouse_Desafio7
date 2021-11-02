@@ -42,5 +42,3 @@ async function main(){
 }
 
 main()
-
-// await knex.schema.dropTable('productos')

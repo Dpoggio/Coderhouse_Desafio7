@@ -9,7 +9,7 @@ const handlebars = require('express-handlebars')
 const PORT = process.env.PORT || 8080
 const ERROR_CODE = 500
 
-/*** TMP ****/
+/*** Misc ****/
 const Productos = require(__dirname + '/model/productos.js')
 const Mensajes = require(__dirname + '/model/mensajes.js')
 const productos = new Productos()
