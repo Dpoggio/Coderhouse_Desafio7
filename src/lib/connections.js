@@ -11,5 +11,5 @@ exports.mariaDb = {
 
 exports.sqlite = {
     client: 'sqlite3',
-    connection: { filename: './DB/ecommerce.sqlite'}
+    connection: { filename: './DB/ecommerce.db'}
 }
