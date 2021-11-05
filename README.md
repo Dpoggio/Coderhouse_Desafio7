@@ -1,6 +1,6 @@
-# Websockets
+# Nuestra Primera Base de Datos
 
-Desafio 6 del curso Backend de Coderhouse
+Desafio 7 del curso Backend de Coderhouse
 
 ## Instalar dependencias
 
